@@ -8,7 +8,11 @@ License: Artistic-2.0
 Encoding: UTF-8
 LazyData: true
 Imports:
-	lme4
+	lme4,
+	ggfortify,
+	SummarizedExperiment,
+	dplyr,
+	WGCNA
 RoxygenNote: 6.0.1
 Suggests: knitr,
     rmarkdown
