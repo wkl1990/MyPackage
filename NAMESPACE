@@ -3,5 +3,8 @@
 export(gene_filter)
 export(normalPCA)
 export(onestepPCA)
+export(outlier_PCA)
+export(outlier_connectivity)
+export(outlier_hcluster)
 export(pvca)
 export(pvca2)

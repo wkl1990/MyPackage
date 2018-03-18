@@ -4,10 +4,12 @@
 \alias{normalPCA}
 \title{Principal Component Analysis}
 \usage{
-normalPCA(data, main = "PCA plot")
+normalPCA(data, label = FALSE, main = "PCA plot")
 }
 \arguments{
 \item{data}{Data matrix}
+
+\item{label}{Whether use the label in PCA plot or not Defaults to FALSE}
 
 \item{main}{The title in plot Defaults to "PVCA plot"}
 }

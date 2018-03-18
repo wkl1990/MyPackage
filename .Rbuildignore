@@ -4,4 +4,4 @@
 .gitignore
 .github
 docs
-
+^.*\.json$

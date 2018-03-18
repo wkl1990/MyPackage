@@ -3,6 +3,7 @@
 #' This function perform PCA with one step code or step-by-step.
 #'
 #' @param data Data matrix
+#' @param label Whether use the label in PCA plot or not Defaults to FALSE
 #' @param main The title in plot Defaults to "PVCA plot"
 #' @author WKL
 #' @keywords PCA
@@ -13,12 +14,13 @@
 #' @export normalPCA
 
 #step-by-step pca plot
-normalPCA <- function(data, main="PCA plot"){
-	pcdata <- princomp(data,cor=T)
+normalPCA <- function(data, label=FALSE, main="PCA plot"){
+	pcdata <- princomp(data,cor=FALSE)
 	# pdf("pca1.pdf")
 	plot(pcdata$loadings,pch=18,main=main)
-	text(pcdata$loadings,substring(row.names(pcdata$loadings),8),pos=4,cex=.7)
-	# text(pcdata$loadings,sub("SAMPLE_"," ",rownames(pcdata$loadings)),pos=4,cex=.7)
+	if (label){
+		text(pcdata$loadings,rownames(pcdata$loadings),pos=4,cex=.7)
+	}
 	# dev.off()
 }
 
@@ -35,7 +37,7 @@ normalPCA <- function(data, main="PCA plot"){
 #' @return PCA plot
 #' @export
 #' @examples
-#' onestepPCA(data, trait, colour, label=FALSE)
+#' onestepPCA(data, trait, colour="Gender", label=FALSE)
 #' @export
 
 #one step pca auto-plot
@@ -43,7 +45,7 @@ onestepPCA <- function(data, trait, colour, label=FALSE){
 	datat <- t(data) 
 	alldata <- data.frame(datat,trait)
 	# suppressMessages(library(ggfortify))
-	pcaplot <- ggfortify::autoplot(prcomp(alldata[,c(1:nrow(data))]),data=alldata,colour=colour,label=label)
+	pcaplot <- ggplot2::autoplot(prcomp(alldata[,c(1:nrow(data))]),data=alldata,colour=colour,label=label)
 	# pdf("pca2.pdf")
 	plot(pcaplot)
 	# dev.off()

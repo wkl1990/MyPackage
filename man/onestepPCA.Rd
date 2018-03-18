@@ -22,7 +22,7 @@ PCA plot
 This function perform PCA with one step code or step-by-step.
 }
 \examples{
-onestepPCA(data, trait, colour, label=FALSE)
+onestepPCA(data, trait, colour="Gender", label=FALSE)
 }
 \author{
 WKL

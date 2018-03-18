@@ -86,11 +86,11 @@ pvca <- function(data, trait, pct_threshold = .5876, main="PVCA plot", xlab="Eff
         y = (((i - 1) * expDesignRowN) + 1)
         funct = paste("pc_data_matrix", function.mods, sep = " ~ ")
         Rm1ML = lme4::lmer(funct, Data[y:(((i - 1) * expDesignRowN) + expDesignRowN), ], REML = TRUE,
-            control=lmerControl(check.nobs.vs.nlev = "ignore",check.nobs.vs.rankZ = "ignore",check.nobs.vs.nRE="ignore"),verbose = FALSE, na.action = na.omit)
+            control=lme4::lmerControl(check.nobs.vs.nlev = "ignore",check.nobs.vs.rankZ = "ignore",check.nobs.vs.nRE="ignore"),verbose = FALSE, na.action = na.omit)
         randomEffects = Rm1ML
-        randomEffectsMatrix[i, ] = c(unlist(VarCorr(Rm1ML)), resid = sigma(Rm1ML)^2)
+        randomEffectsMatrix[i, ] = c(unlist(lme4::VarCorr(Rm1ML)), resid = sigma(Rm1ML)^2)
     }
-    effectsNames = c(names(getME(Rm1ML, "cnms")), "resid")
+    effectsNames = c(names(lme4::getME(Rm1ML, "cnms")), "resid")
     #Standardize Variance
     randomEffectsMatrixStdze = matrix(data = 0, nrow = pc_n, ncol = effects_n)
     for (i in 1:pc_n){
@@ -218,11 +218,11 @@ pvca2 <- function(data,trait,pct_threshold = .5876, main="PVCA plot", xlab="Effe
         y = (((i - 1) * expDesignRowN) + 1)
         funct = paste("pc_data_matrix", function.mods, sep = " ~ ")
         Rm1ML = lme4::lmer(funct, Data[y:(((i - 1) * expDesignRowN) + expDesignRowN), ], REML = TRUE,
-            control=lmerControl(check.nobs.vs.nlev = "ignore",check.nobs.vs.rankZ = "ignore",check.nobs.vs.nRE="ignore"),verbose = FALSE, na.action = na.omit)
+            control=lme4::lmerControl(check.nobs.vs.nlev = "ignore",check.nobs.vs.rankZ = "ignore",check.nobs.vs.nRE="ignore"),verbose = FALSE, na.action = na.omit)
         randomEffects = Rm1ML
-        randomEffectsMatrix[i, ] = c(unlist(VarCorr(Rm1ML)), resid = sigma(Rm1ML)^2)
+        randomEffectsMatrix[i, ] = c(unlist(lme4::VarCorr(Rm1ML)), resid = sigma(Rm1ML)^2)
     }
-    effectsNames = c(names(getME(Rm1ML, "cnms")), "resid")
+    effectsNames = c(names(lme4::getME(Rm1ML, "cnms")), "resid")
     #Standardize Variance
     randomEffectsMatrixStdze = matrix(data = 0, nrow = pc_n, ncol = effects_n)
     for (i in 1:pc_n){

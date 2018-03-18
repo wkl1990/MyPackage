@@ -3,16 +3,16 @@ Title: The usually used code for data analysis in my pipeline.
 Version: 0.0.0.9000
 Authors@R: person("Kangli", "Wang", email = "wangkangli@sklmg.edu.cn", role = c("aut", "cre"))
 Description: The usually used code for data analysis in my pipeline.
-Depends: R (>= 3.3.3)
+Depends: R (>= 3.3.3), ggfortify
 License: Artistic-2.0
 Encoding: UTF-8
 LazyData: true
 Imports:
 	lme4,
-	ggfortify,
 	SummarizedExperiment,
 	dplyr,
-	WGCNA
+	WGCNA,
+	ggplot2
 RoxygenNote: 6.0.1
 Suggests: knitr,
     rmarkdown
