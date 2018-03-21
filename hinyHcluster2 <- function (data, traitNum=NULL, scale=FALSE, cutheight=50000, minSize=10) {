@@ -1,0 +1,46 @@
+tabPanel                 package:shiny                 R Documentation
+
+_C_r_e_a_t_e _a _t_a_b _p_a_n_e_l
+
+_D_e_s_c_r_i_p_t_i_o_n:
+
+     Create a tab panel that can be included within a ‘tabsetPanel’.
+
+_U_s_a_g_e:
+
+     tabPanel(title, ..., value = title, icon = NULL)
+     
+_A_r_g_u_m_e_n_t_s:
+
+   title: Display title for tab
+
+     ...: UI elements to include within the tab
+
+   value: The value that should be sent when ‘tabsetPanel’ reports that
+          this tab is selected. If omitted and ‘tabsetPanel’ has an
+          ‘id’, then the title will be used..
+
+    icon: Optional icon to appear on the tab. This attribute is only
+          valid when using a ‘tabPanel’ within a ‘navbarPage’.
+
+_V_a_l_u_e:
+
+     A tab that can be passed to ‘tabsetPanel’
+
+_S_e_e _A_l_s_o:
+
+     ‘tabsetPanel’
+
+_E_x_a_m_p_l_e_s:
+
+     # Show a tabset that includes a plot, summary, and
+     # table view of the generated distribution
+     mainPanel(
+       tabsetPanel(
+         tabPanel("Plot", plotOutput("plot")),
+         tabPanel("Summary", verbatimTextOutput("summary")),
+         tabPanel("Table", tableOutput("table"))
+       )
+     )
+     
+

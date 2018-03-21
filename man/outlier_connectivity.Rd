@@ -4,7 +4,8 @@
 \alias{outlier_connectivity}
 \title{Sample filter based on connectivity z-socres}
 \usage{
-outlier_connectivity(data, onetrait = NULL, sdout = 2, label = FALSE)
+outlier_connectivity(data, onetrait = NULL, sdout = 2, label = FALSE,
+  plot = TRUE)
 }
 \arguments{
 \item{data}{Data matrix}
@@ -14,6 +15,8 @@ outlier_connectivity(data, onetrait = NULL, sdout = 2, label = FALSE)
 \item{sdout}{The threshold for outliers Defaults to 2}
 
 \item{label}{Whether use the label in plot or not Defaults to FALSE}
+
+\item{plot}{Whether output the plot or not Defaults to TRUE}
 }
 \value{
 outliers

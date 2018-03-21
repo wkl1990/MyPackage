@@ -5,10 +5,10 @@
 #' @param data Data matrix
 #' @param label Whether use the label in PCA plot or not Defaults to FALSE
 #' @param main The title in plot Defaults to "PVCA plot"
+#' @import ggfortify
 #' @author WKL
 #' @keywords PCA
 #' @return PCA plot
-#' @export
 #' @examples
 #' normalPCA(data, main="PCA plot")
 #' @export normalPCA

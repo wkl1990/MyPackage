@@ -5,7 +5,7 @@
 \title{Sample filter based on PCA}
 \usage{
 outlier_PCA(data, trait = NULL, colour = NULL, label = FALSE,
-  pcout = 0.3)
+  pcout = 0.3, plot = TRUE)
 }
 \arguments{
 \item{data}{Data matrix}
@@ -17,6 +17,8 @@ outlier_PCA(data, trait = NULL, colour = NULL, label = FALSE,
 \item{label}{Whether use the label in PCA plot or not Defaults to FALSE}
 
 \item{pcout}{The threshold for outliers Defaults to 0.3}
+
+\item{plot}{Whether output the plot or not Defaults to TRUE}
 }
 \value{
 outliers
