@@ -12,7 +12,7 @@
 #' @keywords cluster, shiny
 #' @return a local webpage for visualization of hcluster
 #' @examples
-#' shinyHcluster(data, traitNum, cutheight=1000)
+#' shinyHcluster(data, trait_num, cutheight=1000)
 #' @export
 
 shinyHcluster <- function (data, traitNum=NULL, scale=FALSE, cutheight=50000, minSize=10) {
@@ -61,7 +61,7 @@ shinyHcluster <- function (data, traitNum=NULL, scale=FALSE, cutheight=50000, mi
 #' @keywords cluster, shiny
 #' @return a local webpage for visualization of hcluster
 #' @examples
-#' shinyHcluster2(data, traitNum, cutheight=1000)
+#' shinyHcluster2(data, trait_num, cutheight=1000)
 #' @export
 
 shinyHcluster2 <- function (data, traitNum=NULL, scale=FALSE, cutheight=50000, minSize=10) {

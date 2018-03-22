@@ -29,7 +29,7 @@ a local webpage for visualization of hcluster
 A simple \pkg{shiny} app to show outliers based on hierarchical clustering on local web browser.
 }
 \examples{
-outlier_hcluster(data, traitNum, cutheight=50000)
+outlier_hcluster(data, trait_num, cutheight=50000)
 }
 \author{
 WKL

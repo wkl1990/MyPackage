@@ -11,7 +11,7 @@
 #' @keywords connectivity, outliers
 #' @return outliers
 #' @examples
-#' outlier_connectivity(data, onetrait, sdout=2, label=FALSE)
+#' outlier_connectivity(data, trait$Gender, sdout=2, label=FALSE)
 #' @export
 
 outlier_connectivity <- function(data, onetrait=NULL, sdout=2, label=FALSE, plot=TRUE){
@@ -60,7 +60,7 @@ outlier_connectivity <- function(data, onetrait=NULL, sdout=2, label=FALSE, plot
 #' @keywords cluster, shiny
 #' @return a local webpage for visualization of hcluster
 #' @examples
-#' outlier_hcluster(data, traitNum, cutheight=50000)
+#' outlier_hcluster(data, trait_num, cutheight=50000)
 #' @export
 
 outlier_hcluster <- function(data, traitNum=NULL, scale=FALSE, cutheight=50000, minSize=10, plot=TRUE, print=TRUE){

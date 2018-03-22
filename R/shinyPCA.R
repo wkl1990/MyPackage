@@ -9,7 +9,7 @@
 #' @keywords PCA, outliers
 #' @return a local webpage for visualization of PCA
 #' @examples
-#' shinyPCA(data, onetrait)
+#' shinyPCA(data, trait$Gender)
 #' @export
 
 #APP37

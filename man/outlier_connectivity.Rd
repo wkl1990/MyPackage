@@ -25,7 +25,7 @@ outliers
 This function remove outliers based on network connectivity z-scores.
 }
 \examples{
-outlier_connectivity(data, onetrait, sdout=2, label=FALSE)
+outlier_connectivity(data, trait$Gender, sdout=2, label=FALSE)
 }
 \author{
 WKL

@@ -20,7 +20,7 @@ a local webpage for visualization of PCA
 A simple \pkg{shiny} app to show outliers based on PCA on local web browser.
 }
 \examples{
-shinyPCA(data, onetrait)
+shinyPCA(data, trait$Gender)
 }
 \author{
 WKL
