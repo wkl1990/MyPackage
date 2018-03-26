@@ -40,3 +40,36 @@ barplot_reads <- function(mapping_reads, oneTrait=NULL, height=5){
 	}
 	abline(h=height,col="blue")
 }
+
+#' Density plot 
+#'
+#' Density plot of log transformed data for quanlity control.
+#'
+#' @param data Data matrix
+#' @param oneTrait One sample information which must be factor for density plot Defaults to NULL
+#' @param xlab The title used for the xlab of boxplot Defaults to \pkg{log2(value + .001)}
+#' @param main The title for plot Defaults to \pkg{Density plot}
+#' @param ylim The y-axis limitaiton for density plot Defaults to \pkg{c(0,0.5)}
+#' @author WKL
+#' @keywords density, QC
+#' @return a density plot of the data
+#' @examples
+#' QC_density(data, trait$Race)
+#' @export
+
+QC_density <- function(data, oneTrait=NULL, main="Density plot", xlab="log2(value + .001)", ylim=c(0,0.5)){
+	data_log <- log2(data+0.001)
+	if (is.null(ncol(data))){
+		plot(density(data_log, na.rm=T),ylim=ylim, main=main, xlab = xlab)
+	} else {
+		i = 1
+		if (is.null(oneTrait)){
+			plot(density((data_log[,i]), na.rm=T),ylim=ylim, main=main, xlab = xlab)
+			for(i in 2:dim(data_log)[2]) {lines(density((data_log[,i]), na.rm=T), ylim=ylim)}
+		} else {
+			plot(density((data_log[,i]), na.rm=T),ylim=ylim, col = as.numeric(oneTrait[i]), main=main, xlab = xlab)
+			for(i in 2:dim(data_log)[2]) {lines(density((data_log[,i]), na.rm=T), col = as.numeric(oneTrait[i]),ylim=ylim)}
+			legend("topright", levels(oneTrait), cex=0.7, col = 1:3, pch=19)
+		}
+	}
+}

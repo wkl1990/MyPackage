@@ -27,9 +27,9 @@ shinyPCA <- function(data, onetrait=NULL){
 		pca <- as.data.frame(prcomp(data)$rotation)
 		output$plot <- renderPlot({
 			if (is.null(onetrait)){
-				ggplot(pca, aes(PC1,PC2))+geom_point(size=2)
+				ggplot2::ggplot(pca, aes(PC1,PC2))+geom_point(size=2)
 			} else {
-				ggplot(pca, aes(PC1,PC2))+geom_point(aes(color=onetrait),size=2)
+				ggplot2::ggplot(pca, aes(PC1,PC2))+geom_point(aes(color=onetrait),size=2)
 			}
 		})
 	
