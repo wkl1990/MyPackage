@@ -34,7 +34,7 @@ boxplot_log <- function(data, oneTrait=NULL, ylab="log2(value+0.001)", main="QC 
 }
 
 barplot_reads <- function(mapping_reads, oneTrait=NULL, height=5){
-	barplot(mapping_reads/10^6,col=as.numeric(oneTrait), ylab="Mapping Reads (x10e6)")
+	barplot(mapping_reads/10^6,col=as.numeric(oneTrait), ylab="Mapping Reads (x10e6)",las=2)
 	if (!is.null(oneTrait)){
 		legend("topright",levels(oneTrait),fill=as.numeric(unique(oneTrait)), cex=.75)
 	}
